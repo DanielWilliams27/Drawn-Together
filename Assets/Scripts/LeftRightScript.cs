@@ -18,8 +18,6 @@ public class LeftRightScript : MonoBehaviour
         float angle = Mathf.Atan2(vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg - rotationModifier;
         Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
         transform.rotation = Quaternion.Slerp(transform.rotation, q, Time.deltaTime * speed);
-
-        //transform.position = -other.transform.position;
     }
 
     void Update()
