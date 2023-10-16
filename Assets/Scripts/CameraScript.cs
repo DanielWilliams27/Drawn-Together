@@ -8,6 +8,8 @@ public class CameraScript : MonoBehaviour
     public GameObject right;
 
     private float distance;
+
+    public float minimumSize = 30;
     
     // Start is called before the first frame update
     void Start()
@@ -36,6 +38,13 @@ public class CameraScript : MonoBehaviour
 
     private float CameraSizeCalculation(float distance)
     {
-        return (distance / 2) + 10;
+        if ((distance / 2) + 10 <= minimumSize)
+        {
+            return minimumSize;
+        }
+        else
+        {
+            return (distance / 2) + 10;
+        }
     }
 }

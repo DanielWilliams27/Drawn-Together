@@ -465,6 +465,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 740745619}
   right: {fileID: 1939030865}
+  minimumSize: 30
 --- !u!1 &607632579
 GameObject:
   m_ObjectHideFlags: 0
@@ -1578,11 +1579,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1064073569433352334, guid: ac542c40835e9e9459d27b93dcce45d6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.1
+      value: -26.1
       objectReference: {fileID: 0}
     - target: {fileID: 1064073569433352334, guid: ac542c40835e9e9459d27b93dcce45d6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.1
+      value: 14.1
       objectReference: {fileID: 0}
     - target: {fileID: 1064073569433352334, guid: ac542c40835e9e9459d27b93dcce45d6, type: 3}
       propertyPath: m_LocalPosition.z
