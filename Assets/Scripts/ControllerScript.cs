@@ -8,7 +8,6 @@ public class ControllerScript : MonoBehaviour
     public GameObject rightObject;
 
     public int moveSpeed = 30;
-    public int maxSpeed = 10;
 
     private SpriteRenderer _wipe;
     private CircleCollider2D _center;
@@ -20,6 +19,12 @@ public class ControllerScript : MonoBehaviour
     private BoxCollider2D _rightCollider;
 
     public float wipeSpeed = 0.5f;
+    public float maxWipe = 110f;
+
+    private bool _playState = true;
+
+    public GameObject success;
+    public GameObject failed;
 
     // Start is called before the first frame update
     void Start()
@@ -38,36 +43,60 @@ public class ControllerScript : MonoBehaviour
     void FixedUpdate()
     {
         // Key presses and movement
-        if (Input.GetKey(GlobalScript.right)
-            && _leftRigidbody.velocity.x <= maxSpeed
-            && _rightRigidbody.velocity.x >= -maxSpeed)
+        if (Input.GetKey(GlobalScript.right))
         {
-            _leftRigidbody.velocity += Vector2.right * moveSpeed;
-            _rightRigidbody.velocity -= Vector2.right * moveSpeed;
+            if (_playState)
+            {
+                _leftRigidbody.velocity += (Vector2.right * moveSpeed) * Time.deltaTime;
+                _rightRigidbody.velocity -= (Vector2.right * moveSpeed) * Time.deltaTime;
+            }
+            else
+            {
+                _leftRigidbody.velocity = Vector2.zero;
+                _rightRigidbody.velocity = Vector2.zero;
+            }
         }
 
-        if (Input.GetKey(GlobalScript.left)
-            && _leftRigidbody.velocity.x >= -maxSpeed
-            && _rightRigidbody.velocity.x <= maxSpeed)
+        if (Input.GetKey(GlobalScript.left))
         {
-            _leftRigidbody.velocity += Vector2.left * moveSpeed;
-            _rightRigidbody.velocity -= Vector2.left * moveSpeed;
+            if (_playState)
+            {
+                _leftRigidbody.velocity += (Vector2.left * moveSpeed) * Time.deltaTime;
+                _rightRigidbody.velocity -= (Vector2.left * moveSpeed) * Time.deltaTime;
+            }
+            else
+            {
+                _leftRigidbody.velocity = Vector2.zero;
+                _rightRigidbody.velocity = Vector2.zero;
+            }
         }
 
-        if (Input.GetKey(GlobalScript.up)
-            && _leftRigidbody.velocity.y >= -maxSpeed
-            && _rightRigidbody.velocity.y <= maxSpeed)
+        if (Input.GetKey(GlobalScript.up))
         {
-            _leftRigidbody.velocity -= Vector2.up * moveSpeed;
-            _rightRigidbody.velocity += Vector2.up * moveSpeed;
+            if (_playState)
+            {
+                _leftRigidbody.velocity -= (Vector2.up * moveSpeed) * Time.deltaTime;
+                _rightRigidbody.velocity += (Vector2.up * moveSpeed) * Time.deltaTime;
+            }
+            else
+            {
+                _leftRigidbody.velocity = Vector2.zero;
+                _rightRigidbody.velocity = Vector2.zero;
+            }
         }
 
-        if (Input.GetKey(GlobalScript.down)
-            && _leftRigidbody.velocity.y <= maxSpeed
-            && _rightRigidbody.velocity.y >= -maxSpeed)
+        if (Input.GetKey(GlobalScript.down))
         {
-            _leftRigidbody.velocity -= Vector2.down * moveSpeed;
-            _rightRigidbody.velocity += Vector2.down * moveSpeed;
+            if (_playState)
+            {
+                _leftRigidbody.velocity -= (Vector2.down * moveSpeed) * Time.deltaTime;
+                _rightRigidbody.velocity += (Vector2.down * moveSpeed) * Time.deltaTime;
+            }
+            else
+            {
+                _leftRigidbody.velocity = Vector2.zero;
+                _rightRigidbody.velocity = Vector2.zero;
+            }
         }
     }
 
@@ -98,17 +127,34 @@ public class ControllerScript : MonoBehaviour
             _rightRigidbody.velocity = Vector2.zero;
         }
 
-        //Mission Success
+        // Level Success
         if (_center.IsTouching(_leftCollider) 
             && _center.IsTouching(_rightCollider))
         {
-            Time.timeScale = 0;
-            _wipe.enabled = true;
+            LevelOver(success);
+            
         }
 
-        if (_wipe.enabled)
+        // Level Failed
+        if (_leftRigidbody.IsTouchingLayers()
+            && _rightRigidbody.IsTouchingLayers())
+        {
+            LevelOver(failed);
+        }
+
+        if (_wipe.enabled && _wipe.size.x <= maxWipe)
         {
             _wipe.size += (new Vector2(1, 1) * wipeSpeed) * Time.deltaTime;
+        }
+    }
+
+    private void LevelOver(GameObject overScreen)
+    {
+        _playState = false;
+        _wipe.enabled = true;
+        if (_wipe.size.x >= maxWipe)
+        {
+            overScreen.SetActive(true);
         }
     }
 }

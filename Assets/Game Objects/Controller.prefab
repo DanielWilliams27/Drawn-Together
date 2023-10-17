@@ -50,9 +50,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   leftObject: {fileID: 2533159344756487695}
   rightObject: {fileID: 6859402856747954409}
-  moveSpeed: 20
-  maxSpeed: 20
+  moveSpeed: 100
   wipeSpeed: 60
+  success: {fileID: 0}
+  failed: {fileID: 0}
 --- !u!58 &8739135367257144913
 CircleCollider2D:
   m_ObjectHideFlags: 0
