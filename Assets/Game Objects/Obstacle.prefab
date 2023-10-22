@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1064073569433352334}
   - component: {fileID: 1064073569433352335}
   - component: {fileID: 1064073569433352321}
-  - component: {fileID: 1064073569433352320}
+  - component: {fileID: 3725396764092805864}
   m_Layer: 0
   m_Name: Obstacle
   m_TagString: Untagged
@@ -107,7 +107,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 7
---- !u!61 &1064073569433352320
+--- !u!61 &3725396764092805864
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

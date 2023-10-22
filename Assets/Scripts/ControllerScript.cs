@@ -137,7 +137,9 @@ public class ControllerScript : MonoBehaviour
 
         // Level Failed
         if (_leftRigidbody.IsTouchingLayers()
-            && _rightRigidbody.IsTouchingLayers())
+            && _rightRigidbody.IsTouchingLayers()
+            && !_center.IsTouching(_leftCollider)
+            && !_center.IsTouching(_rightCollider))
         {
             LevelOver(failed);
         }

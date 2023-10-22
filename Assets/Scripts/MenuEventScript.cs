@@ -11,10 +11,10 @@ public class MenuEventScript : MonoBehaviour
     public GameObject options;
     public GameObject levels;
     public Text upText, downText, leftText, rightText;
-    
-    public void LoadScene(Scene scene)
+
+    public void LoadScene(string scene)
     {
-        SceneManager.LoadScene(scene.name);
+        SceneManager.LoadScene(scene);
     }
 
     public void LoadMain(GameObject deactivateMenu)
