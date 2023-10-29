@@ -4,15 +4,20 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class ReverseButtonScript : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, ISelectHandler, IDeselectHandler
+public class ReverseButtonScript : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler//, ISelectHandler, IDeselectHandler
 {
     public Text text;
-    bool select = false;
+    //bool select = false;
 
-    public void OnDeselect(BaseEventData eventData)
+    /*public void OnDeselect(BaseEventData eventData)
     {
         text.color = Color.white;
         select = false;
+    }*/
+
+    public void OnEnable()
+    {
+        text.color = Color.black;
     }
 
     public void OnPointerEnter(PointerEventData eventData)
@@ -22,15 +27,17 @@ public class ReverseButtonScript : MonoBehaviour, IPointerEnterHandler, IPointer
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        if (select == false)
+        /*if (select == false)
         {
             text.color = Color.white;
-        }
+        }*/
+
+        text.color = Color.white;
     }
 
     public void OnSelect(BaseEventData eventData)
     {
         text.color = Color.black;
-        select = true;
+        //select = true;
     }
 }

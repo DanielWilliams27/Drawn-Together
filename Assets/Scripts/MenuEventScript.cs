@@ -27,4 +27,9 @@ public class MenuEventScript : MonoBehaviour
         deactivateMenu.SetActive(false);
         options.SetActive(true);
     }
+
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
 }
