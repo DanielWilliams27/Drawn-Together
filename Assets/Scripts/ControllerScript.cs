@@ -21,7 +21,7 @@ public class ControllerScript : MonoBehaviour
     public float wipeSpeed = 0.5f;
     public float maxWipe = 110f;
 
-    private bool _playState = true;
+    public static bool playState = true;
 
     public GameObject success;
     public GameObject failed;
@@ -45,7 +45,7 @@ public class ControllerScript : MonoBehaviour
         // Key presses and movement
         if (Input.GetKey(GlobalScript.right))
         {
-            if (_playState)
+            if (playState)
             {
                 _leftRigidbody.velocity += (Vector2.right * moveSpeed) * Time.deltaTime;
                 _rightRigidbody.velocity -= (Vector2.right * moveSpeed) * Time.deltaTime;
@@ -59,7 +59,7 @@ public class ControllerScript : MonoBehaviour
 
         if (Input.GetKey(GlobalScript.left))
         {
-            if (_playState)
+            if (playState)
             {
                 _leftRigidbody.velocity += (Vector2.left * moveSpeed) * Time.deltaTime;
                 _rightRigidbody.velocity -= (Vector2.left * moveSpeed) * Time.deltaTime;
@@ -73,7 +73,7 @@ public class ControllerScript : MonoBehaviour
 
         if (Input.GetKey(GlobalScript.up))
         {
-            if (_playState)
+            if (playState)
             {
                 _leftRigidbody.velocity -= (Vector2.up * moveSpeed) * Time.deltaTime;
                 _rightRigidbody.velocity += (Vector2.up * moveSpeed) * Time.deltaTime;
@@ -87,7 +87,7 @@ public class ControllerScript : MonoBehaviour
 
         if (Input.GetKey(GlobalScript.down))
         {
-            if (_playState)
+            if (playState)
             {
                 _leftRigidbody.velocity -= (Vector2.down * moveSpeed) * Time.deltaTime;
                 _rightRigidbody.velocity += (Vector2.down * moveSpeed) * Time.deltaTime;
@@ -152,7 +152,7 @@ public class ControllerScript : MonoBehaviour
 
     private void LevelOver(GameObject overScreen)
     {
-        _playState = false;
+        playState = false;
         _wipe.enabled = true;
         if (_wipe.size.x >= maxWipe)
         {
