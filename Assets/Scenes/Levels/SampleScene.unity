@@ -491,6 +491,8 @@ MonoBehaviour:
   left: {fileID: 740745619}
   right: {fileID: 1939030865}
   minimumSize: 30
+  bufferSize: 10
+  deadzoneSize: 20
 --- !u!1 &607632579
 GameObject:
   m_ObjectHideFlags: 0
@@ -714,6 +716,10 @@ PrefabInstance:
       propertyPath: success
       value: 
       objectReference: {fileID: 69670239}
+    - target: {fileID: 6786894387417134049, guid: d16198a2b7f7053469b717cb6a732148, type: 3}
+      propertyPath: wipeSpeed
+      value: 90
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d16198a2b7f7053469b717cb6a732148, type: 3}
 --- !u!1 &718218245

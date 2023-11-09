@@ -8,7 +8,7 @@ public class CameraScript : MonoBehaviour
     public GameObject right;
 
     private float _distance;
-    private float _cameraSize;
+    public static float cameraSize;
 
     public float minimumSize = 30;
     public float bufferSize = 10;
@@ -24,7 +24,7 @@ public class CameraScript : MonoBehaviour
     void Update()
     {
         _distance = DistanceCalculation(left, right);
-        _cameraSize = this.GetComponent<Camera>().orthographicSize;
+        cameraSize = this.GetComponent<Camera>().orthographicSize;
 
         this.GetComponent<Camera>().orthographicSize = CameraSizeCalculation(_distance);
     }
@@ -46,17 +46,17 @@ public class CameraScript : MonoBehaviour
         {
             return minimumSize + deadzoneSize;
         }
-        else if ((distance / 2) + bufferSize <= _cameraSize - deadzoneSize)
+        else if ((distance / 2) + bufferSize <= cameraSize - deadzoneSize)
         {
             return (distance / 2) + bufferSize + deadzoneSize;
         }
-        else if ((distance / 2) + bufferSize >= _cameraSize)
+        else if ((distance / 2) + bufferSize >= cameraSize)
         {
             return (distance / 2) + bufferSize;
         }
         else
         {
-            return _cameraSize;
+            return cameraSize;
         }
     }
 }

@@ -137,14 +137,14 @@ public class ControllerScript : MonoBehaviour
 
         // Level Failed
         if (_leftRigidbody.IsTouchingLayers()
-            && _rightRigidbody.IsTouchingLayers()
+            || _rightRigidbody.IsTouchingLayers()
             && !_center.IsTouching(_leftCollider)
             && !_center.IsTouching(_rightCollider))
         {
             LevelOver(failed);
         }
 
-        if (_wipe.enabled && _wipe.size.x <= maxWipe)
+        if (_wipe.enabled && _wipe.size.x <= CameraScript.cameraSize * 3)
         {
             _wipe.size += (new Vector2(1, 1) * wipeSpeed) * Time.deltaTime;
         }
@@ -154,7 +154,7 @@ public class ControllerScript : MonoBehaviour
     {
         playState = false;
         _wipe.enabled = true;
-        if (_wipe.size.x >= maxWipe)
+        if (_wipe.size.x >= CameraScript.cameraSize * 3)
         {
             overScreen.SetActive(true);
         }

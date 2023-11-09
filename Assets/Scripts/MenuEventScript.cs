@@ -10,6 +10,7 @@ public class MenuEventScript : MonoBehaviour
     public GameObject main;
     public GameObject options;
     public GameObject levels;
+    public GameObject guide;
 
     public void LoadScene(string scene)
     {
@@ -26,6 +27,12 @@ public class MenuEventScript : MonoBehaviour
     {
         deactivateMenu.SetActive(false);
         options.SetActive(true);
+    }
+
+    public void LoadGuide(GameObject deactivateMenu)
+    {
+        deactivateMenu.SetActive(false);
+        guide.SetActive(true);
     }
 
     public void ExitGame()
