@@ -154,7 +154,7 @@ public class ControllerScript : MonoBehaviour
     {
         playState = false;
         _wipe.enabled = true;
-        if (_wipe.size.x >= CameraScript.cameraSize * 3)
+        if (_wipe.size.x >= (CameraScript.cameraSize * 2))
         {
             overScreen.SetActive(true);
         }
