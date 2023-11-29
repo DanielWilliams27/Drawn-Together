@@ -26,6 +26,8 @@ public class ControllerScript : MonoBehaviour
     public GameObject success;
     public GameObject failed;
 
+    private bool _overScreen;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -127,36 +129,41 @@ public class ControllerScript : MonoBehaviour
             _rightRigidbody.velocity = Vector2.zero;
         }
 
-        // Level Success
+        // Level Cleared
         if (_center.IsTouching(_leftCollider) 
             && _center.IsTouching(_rightCollider))
         {
-            LevelOver(success);
-            
-        }
-
-        // Level Failed
-        if (_leftRigidbody.IsTouchingLayers()
-            || _rightRigidbody.IsTouchingLayers()
-            && !_center.IsTouching(_leftCollider)
-            && !_center.IsTouching(_rightCollider))
+            LevelOver();
+            _overScreen = true;
+        } 
+        else if (_leftRigidbody.IsTouchingLayers()
+            || _rightRigidbody.IsTouchingLayers())  //Level Failed
         {
-            LevelOver(failed);
+            LevelOver();
+            _overScreen = false;
         }
 
         if (_wipe.enabled && _wipe.size.x <= CameraScript.cameraSize * 3)
         {
             _wipe.size += (new Vector2(1, 1) * wipeSpeed) * Time.deltaTime;
+
+            if (_wipe.size.x >= (CameraScript.cameraSize * 2))
+            {
+                if (_overScreen)
+                {
+                    success.SetActive(true);
+                }
+                else
+                {
+                    failed.SetActive(true);
+                }
+            }
         }
     }
 
-    private void LevelOver(GameObject overScreen)
+    private void LevelOver()
     {
         playState = false;
         _wipe.enabled = true;
-        if (_wipe.size.x >= (CameraScript.cameraSize * 2))
-        {
-            overScreen.SetActive(true);
-        }
     }
 }
