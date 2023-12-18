@@ -12,6 +12,8 @@ public class MenuEventScript : MonoBehaviour
     public GameObject levels;
     public GameObject guide;
 
+    public AudioSource[] songList;
+
     public void LoadScene(string scene)
     {
         SceneManager.LoadScene(scene);
