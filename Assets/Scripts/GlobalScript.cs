@@ -15,7 +15,6 @@ public class GlobalScript : MonoBehaviour
         foreach (AudioSource song in songList)
         {
             song.Play();
-            Thread.Sleep(song.time)
         }
     }
 
