@@ -38,6 +38,7 @@ public class SwitchScript : MonoBehaviour
         if (_selected)
         {
             obstacle.transform.position = Vector3.MoveTowards(obstacle.transform.position, _newPosition, moveSpeed * Time.deltaTime);
+            obstacle.transform.Rotate(_newRotate);
         }
     }
 

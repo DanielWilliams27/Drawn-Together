@@ -28,6 +28,9 @@ public class ControllerScript : MonoBehaviour
 
     private bool _overScreen;
 
+    public GameObject[] switches;
+    private CircleCollider2D[] _switchColliders;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,6 +42,11 @@ public class ControllerScript : MonoBehaviour
 
         _leftCollider = leftObject.GetComponent<BoxCollider2D>();
         _rightCollider = rightObject.GetComponent<BoxCollider2D>();
+
+        for (int i=0; i<switches.Length; i++)
+        {
+            _switchColliders[i] = switches[i].GetComponent<CircleCollider2D>();
+        }
     }
 
     // Update is called once per frame

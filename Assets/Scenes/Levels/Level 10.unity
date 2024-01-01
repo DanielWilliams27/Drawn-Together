@@ -1155,7 +1155,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1064073569433352334, guid: ac542c40835e9e9459d27b93dcce45d6, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1064073569433352334, guid: ac542c40835e9e9459d27b93dcce45d6, type: 3}
       propertyPath: m_LocalScale.x
@@ -1834,6 +1834,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1989204173}
   m_CullTransparentMesh: 1
+--- !u!1 &1996294564 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1064073569433352333, guid: ac542c40835e9e9459d27b93dcce45d6, type: 3}
+  m_PrefabInstance: {fileID: 1199181747}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2092693286
 GameObject:
   m_ObjectHideFlags: 0
@@ -1984,7 +1989,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1597547080658415189, guid: e44a724d6ca5eae4e8c1c4d8c527e24d, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1597547080658415189, guid: e44a724d6ca5eae4e8c1c4d8c527e24d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2026,6 +2031,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4313794510327102142, guid: e44a724d6ca5eae4e8c1c4d8c527e24d, type: 3}
+      propertyPath: obstacle
+      value: 
+      objectReference: {fileID: 1996294564}
+    - target: {fileID: 4313794510327102142, guid: e44a724d6ca5eae4e8c1c4d8c527e24d, type: 3}
+      propertyPath: baseSprite
+      value: 
+      objectReference: {fileID: -2413806693520163455, guid: 68100236fe534984394ac7b7021f5609, type: 3}
+    - target: {fileID: 4313794510327102142, guid: e44a724d6ca5eae4e8c1c4d8c527e24d, type: 3}
+      propertyPath: newXPosition
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4313794510327102142, guid: e44a724d6ca5eae4e8c1c4d8c527e24d, type: 3}
+      propertyPath: newYPosition
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4313794510327102142, guid: e44a724d6ca5eae4e8c1c4d8c527e24d, type: 3}
+      propertyPath: selectedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ca98d77db13312b4688ccfb9902c1fd8, type: 3}
     - target: {fileID: 5413523361143033185, guid: e44a724d6ca5eae4e8c1c4d8c527e24d, type: 3}
       propertyPath: m_Name
       value: Switch
