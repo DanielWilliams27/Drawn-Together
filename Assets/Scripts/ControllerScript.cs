@@ -9,14 +9,14 @@ public class ControllerScript : MonoBehaviour
 
     public int moveSpeed = 30;
 
-    private SpriteRenderer _wipe;
-    private CircleCollider2D _center;
+    public static SpriteRenderer wipe;
+    public static CircleCollider2D center;
 
     private Rigidbody2D _leftRigidbody;
     private Rigidbody2D _rightRigidbody;
 
-    private BoxCollider2D _leftCollider;
-    private BoxCollider2D _rightCollider;
+    public static BoxCollider2D leftCollider;
+    public static BoxCollider2D rightCollider;
 
     public float wipeSpeed = 0.5f;
     public float maxWipe = 110f;
@@ -26,27 +26,19 @@ public class ControllerScript : MonoBehaviour
     public GameObject success;
     public GameObject failed;
 
-    private bool _overScreen;
-
-    public GameObject[] switches;
-    private CircleCollider2D[] _switchColliders;
+    public static bool overScreen;
 
     // Start is called before the first frame update
     void Start()
     {
-        _wipe = this.GetComponent<SpriteRenderer>();
-        _center = this.GetComponent<CircleCollider2D>();
+        wipe = this.GetComponent<SpriteRenderer>();
+        center = this.GetComponent<CircleCollider2D>();
 
         _leftRigidbody = leftObject.GetComponent<Rigidbody2D>();
         _rightRigidbody = rightObject.GetComponent<Rigidbody2D>();
 
-        _leftCollider = leftObject.GetComponent<BoxCollider2D>();
-        _rightCollider = rightObject.GetComponent<BoxCollider2D>();
-
-        for (int i=0; i<switches.Length; i++)
-        {
-            _switchColliders[i] = switches[i].GetComponent<CircleCollider2D>();
-        }
+        leftCollider = leftObject.GetComponent<BoxCollider2D>();
+        rightCollider = rightObject.GetComponent<BoxCollider2D>();
     }
 
     // Update is called once per frame
@@ -137,27 +129,27 @@ public class ControllerScript : MonoBehaviour
             _rightRigidbody.velocity = Vector2.zero;
         }
 
-        // Level Cleared
-        if (_center.IsTouching(_leftCollider) 
-            && _center.IsTouching(_rightCollider))
+        /*// Level Cleared
+        if (center.IsTouching(leftCollider) 
+            && center.IsTouching(rightCollider))
         {
             LevelOver();
-            _overScreen = true;
+            overScreen = true;
         } 
         else if (_leftRigidbody.IsTouchingLayers()
             || _rightRigidbody.IsTouchingLayers())  //Level Failed
         {
             LevelOver();
-            _overScreen = false;
-        }
+            overScreen = false;
+        }*/
 
-        if (_wipe.enabled && _wipe.size.x <= CameraScript.cameraSize * 3)
+        if (wipe.enabled && wipe.size.x <= CameraScript.cameraSize * 3)
         {
-            _wipe.size += (new Vector2(1, 1) * wipeSpeed) * Time.deltaTime;
+            wipe.size += (new Vector2(1, 1) * wipeSpeed) * Time.deltaTime;
 
-            if (_wipe.size.x >= (CameraScript.cameraSize * 2))
+            if (wipe.size.x >= (CameraScript.cameraSize * 2))
             {
-                if (_overScreen)
+                if (overScreen)
                 {
                     success.SetActive(true);
                 }
@@ -169,9 +161,9 @@ public class ControllerScript : MonoBehaviour
         }
     }
 
-    private void LevelOver()
+    public static void LevelOver()
     {
         playState = false;
-        _wipe.enabled = true;
+        wipe.enabled = true;
     }
 }

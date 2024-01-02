@@ -31,4 +31,20 @@ public class LeftRightScript : MonoBehaviour
             transform.position = -other.transform.position;
         }
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        // Level Cleared
+        if (ControllerScript.center.IsTouching(ControllerScript.leftCollider)
+            && ControllerScript.center.IsTouching(ControllerScript.rightCollider))
+        {
+            ControllerScript.LevelOver();
+            ControllerScript.overScreen = true;
+        }
+        else if (collision.gameObject.tag == "Obstacle")
+        {
+            ControllerScript.LevelOver();
+            ControllerScript.overScreen = false;
+        }
+    }
 }

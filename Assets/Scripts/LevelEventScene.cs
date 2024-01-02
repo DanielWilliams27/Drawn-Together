@@ -15,6 +15,7 @@ public class LevelEventScene : MonoBehaviour
     public void ReloadScene()
     {
         SceneManager.LoadScene(currentSceneName);
+        ControllerScript.playState = true;
     }
 
     public void LoadScene(string scene)
