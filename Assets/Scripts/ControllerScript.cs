@@ -129,20 +129,6 @@ public class ControllerScript : MonoBehaviour
             _rightRigidbody.velocity = Vector2.zero;
         }
 
-        /*// Level Cleared
-        if (center.IsTouching(leftCollider) 
-            && center.IsTouching(rightCollider))
-        {
-            LevelOver();
-            overScreen = true;
-        } 
-        else if (_leftRigidbody.IsTouchingLayers()
-            || _rightRigidbody.IsTouchingLayers())  //Level Failed
-        {
-            LevelOver();
-            overScreen = false;
-        }*/
-
         if (wipe.enabled && wipe.size.x <= CameraScript.cameraSize * 3)
         {
             wipe.size += (new Vector2(1, 1) * wipeSpeed) * Time.deltaTime;

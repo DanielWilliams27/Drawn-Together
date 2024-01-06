@@ -4,53 +4,69 @@ using UnityEngine;
 
 public class SwitchScript : MonoBehaviour
 {
+    private SpriteRenderer _spriteRenderer;
     public Sprite baseSprite, selectedSprite;
     private bool _selected = false;
     public GameObject obstacle;
 
-    private float _baseXPosition, _baseYPosition, _baseRotation, _baseXScale, _baseYScale;
-    public float newXPosition, newYPosition, newRotation, newXScale, newYScale;
+    private float _baseXPosition, _baseYPosition, _baseRotation;
+    public float newXPosition, newYPosition, newRotation;
 
-    public float moveSpeed = 5f;
+    public float moveSpeed = 5f, rotationSpeed = 2f;
 
-    private Vector3 _basePosition, _newPosition, _baseRotate, _newRotate, _baseScale, _newScale;
+    private Vector3 _basePosition, _newPosition, _baseRotate, _newRotate, _rotationToAdd;
     
     // Start is called before the first frame update
     void Start()
     {
+        _spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         _baseXPosition = obstacle.transform.position.x;
         _baseYPosition = obstacle.transform.position.y;
         _baseRotation = obstacle.transform.rotation.z;
-        _baseXScale = obstacle.transform.lossyScale.x;
-        _baseYScale = obstacle.transform.lossyScale.y;
 
         _basePosition = new Vector3(_baseXPosition, _baseYPosition, 0);
         _newPosition = new Vector3(newXPosition, newYPosition, 0);
         _baseRotate = new Vector3(0, 0, _baseRotation);
         _newRotate = new Vector3(0, 0, newRotation);
-        _baseScale = new Vector3(_baseXScale, _baseYScale, 0);
-        _newScale = new Vector3(newXScale, newYScale, 0);
+        _rotationToAdd = new Vector3(0, 0, rotationSpeed);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (_selected)
+        if (_selected && obstacle.transform.position != _newPosition)
         {
             obstacle.transform.position = Vector3.MoveTowards(obstacle.transform.position, _newPosition, moveSpeed * Time.deltaTime);
-            obstacle.transform.Rotate(_newRotate);
+        }
+        if (_selected && obstacle.transform.eulerAngles != _newRotate)
+        {
+            obstacle.transform.Rotate(_rotationToAdd);
+        }
+
+        if (!_selected && obstacle.transform.position != _basePosition)
+        {
+            obstacle.transform.position = Vector3.MoveTowards(obstacle.transform.position, _basePosition, moveSpeed * Time.deltaTime);
+        }
+        if (!_selected && obstacle.transform.eulerAngles != _baseRotate)
+        {
+            obstacle.transform.Rotate(-_rotationToAdd);
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (_selected)
+        if (collision.gameObject.tag == "Player")
         {
-            _selected = false;
-        }
-        else
-        {
-            _selected = true;
+            if (_selected)
+            {
+                _selected = false;
+                _spriteRenderer.sprite = baseSprite;
+            }
+            else
+            {
+                _selected = true;
+                _spriteRenderer.sprite = selectedSprite;
+            }
         }
     }
 }

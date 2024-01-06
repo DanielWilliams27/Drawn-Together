@@ -52,6 +52,7 @@ MonoBehaviour:
   rightObject: {fileID: 6859402856747954409}
   moveSpeed: 100
   wipeSpeed: 60
+  maxWipe: 110
   success: {fileID: 0}
   failed: {fileID: 0}
 --- !u!58 &8739135367257144913
@@ -137,7 +138,7 @@ GameObject:
   - component: {fileID: 1190785295839200470}
   m_Layer: 0
   m_Name: Left
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -288,7 +289,7 @@ GameObject:
   - component: {fileID: 7095278413668943193}
   m_Layer: 0
   m_Name: Right
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

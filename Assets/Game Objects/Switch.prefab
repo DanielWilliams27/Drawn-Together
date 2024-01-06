@@ -120,6 +120,5 @@ MonoBehaviour:
   newXPosition: 0
   newYPosition: 0
   newRotation: 0
-  newXScale: 0
-  newYScale: 0
   moveSpeed: 5
+  rotationSpeed: 2
