@@ -2195,7 +2195,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Love is All
+  m_Text: O, if I say you look upon this verse
 --- !u!222 &1955465643
 CanvasRenderer:
   m_ObjectHideFlags: 0
