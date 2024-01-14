@@ -114,11 +114,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ddc7d79a09f71a4ca6ec19a199cdad3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseSprite: {fileID: 0}
-  selectedSprite: {fileID: 0}
+  baseSprite: {fileID: -2413806693520163455, guid: 68100236fe534984394ac7b7021f5609, type: 3}
+  selectedSprite: {fileID: 21300000, guid: c502cc90de5631443a65f8821be5ffb0, type: 3}
   obstacle: {fileID: 0}
   newXPosition: 0
   newYPosition: 0
-  newRotation: 0
-  moveSpeed: 5
-  rotationSpeed: 2
+  moveSpeed: 20

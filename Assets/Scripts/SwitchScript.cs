@@ -9,12 +9,12 @@ public class SwitchScript : MonoBehaviour
     private bool _selected = false;
     public GameObject obstacle;
 
-    private float _baseXPosition, _baseYPosition, _baseRotation;
-    public float newXPosition, newYPosition, newRotation;
+    private float _baseXPosition, _baseYPosition;
+    public float newXPosition, newYPosition;
 
-    public float moveSpeed = 5f, rotationSpeed = 2f;
+    public float moveSpeed = 5f;
 
-    private Vector3 _basePosition, _newPosition, _baseRotate, _newRotate, _rotationToAdd;
+    private Vector3 _basePosition, _newPosition;
     
     // Start is called before the first frame update
     void Start()
@@ -22,13 +22,9 @@ public class SwitchScript : MonoBehaviour
         _spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         _baseXPosition = obstacle.transform.position.x;
         _baseYPosition = obstacle.transform.position.y;
-        _baseRotation = obstacle.transform.rotation.z;
 
         _basePosition = new Vector3(_baseXPosition, _baseYPosition, 0);
         _newPosition = new Vector3(newXPosition, newYPosition, 0);
-        _baseRotate = new Vector3(0, 0, _baseRotation);
-        _newRotate = new Vector3(0, 0, newRotation);
-        _rotationToAdd = new Vector3(0, 0, rotationSpeed);
     }
 
     // Update is called once per frame
@@ -38,18 +34,10 @@ public class SwitchScript : MonoBehaviour
         {
             obstacle.transform.position = Vector3.MoveTowards(obstacle.transform.position, _newPosition, moveSpeed * Time.deltaTime);
         }
-        if (_selected && obstacle.transform.eulerAngles != _newRotate)
-        {
-            obstacle.transform.Rotate(_rotationToAdd);
-        }
 
         if (!_selected && obstacle.transform.position != _basePosition)
         {
             obstacle.transform.position = Vector3.MoveTowards(obstacle.transform.position, _basePosition, moveSpeed * Time.deltaTime);
-        }
-        if (!_selected && obstacle.transform.eulerAngles != _baseRotate)
-        {
-            obstacle.transform.Rotate(-_rotationToAdd);
         }
     }
 
