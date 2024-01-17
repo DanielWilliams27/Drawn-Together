@@ -2139,7 +2139,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1375003149
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2911,7 +2911,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 800, y: 300}
+  m_SizeDelta: {x: 774.4, y: 626.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1955465642
 MonoBehaviour:
@@ -2946,7 +2946,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: When I prehaps compounded am with clay
+  m_Text: 'Lest the wise world should look into your moan,
+
+
+    And mock you with
+    me after I am gone.'
 --- !u!222 &1955465643
 CanvasRenderer:
   m_ObjectHideFlags: 0

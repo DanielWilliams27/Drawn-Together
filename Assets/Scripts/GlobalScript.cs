@@ -10,14 +10,6 @@ public class GlobalScript : MonoBehaviour
     public static KeyCode left = KeyCode.A;
     public static KeyCode right = KeyCode.D;
 
-    public static void PlayMusic(AudioSource[] songList)
-    {
-        foreach (AudioSource song in songList)
-        {
-            song.Play();
-        }
-    }
-
     // Start is called before the first frame update
     void Start()
     {

@@ -12,24 +12,9 @@ public class MenuEventScript : MonoBehaviour
     public GameObject levels;
     public GameObject guide;
 
-    public static AudioSource[] songList;
-    public bool musicPlaying = false;
-
     void Start()
     {
-        foreach (AudioSource song in songList)
-        {
-            if (song.isPlaying)
-            {
-                musicPlaying = true;
-            }
-        }
-        
-        if (!musicPlaying)
-        {
-            GlobalScript.PlayMusic(songList);
-        }
-        
+                
     }
 
     public void LoadScene(string scene)
@@ -47,6 +32,12 @@ public class MenuEventScript : MonoBehaviour
     {
         deactivateMenu.SetActive(false);
         options.SetActive(true);
+    }
+
+    public void LoadLevels(GameObject deactivateMenu)
+    {
+        deactivateMenu.SetActive(false);
+        levels.SetActive(true);
     }
 
     public void LoadGuide(GameObject deactivateMenu)

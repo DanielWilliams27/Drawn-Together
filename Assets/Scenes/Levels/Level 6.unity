@@ -1626,7 +1626,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Level 7
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1322483724
@@ -1814,7 +1814,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1375003149
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2224,7 +2224,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 800, y: 300}
+  m_SizeDelta: {x: 787.2, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1955465642
 MonoBehaviour:
@@ -2259,7 +2259,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: The hand that writ it; for I love you so
+  m_Text: The hand that writ it, for I love you so,
 --- !u!222 &1955465643
 CanvasRenderer:
   m_ObjectHideFlags: 0
