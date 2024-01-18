@@ -11,6 +11,7 @@ public class MenuEventScript : MonoBehaviour
     public GameObject options;
     public GameObject levels;
     public GameObject guide;
+    public GameObject credits;
 
     void Start()
     {
@@ -44,6 +45,12 @@ public class MenuEventScript : MonoBehaviour
     {
         deactivateMenu.SetActive(false);
         guide.SetActive(true);
+    }
+
+    public void LoadCredits(GameObject deactivateMenu)
+    {
+        deactivateMenu.SetActive(false);
+        credits.SetActive(true);
     }
 
     public void ExitGame()
