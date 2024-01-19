@@ -892,7 +892,7 @@ PrefabInstance:
       objectReference: {fileID: 69670239}
     - target: {fileID: 6786894387417134049, guid: d16198a2b7f7053469b717cb6a732148, type: 3}
       propertyPath: wipeSpeed
-      value: 90
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7395600236093679862, guid: d16198a2b7f7053469b717cb6a732148, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1525,8 +1525,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 1989204175}
   text: {fileID: 1955465642}
-  eraseSpeed: 0.25
-  startTime: 5
+  eraseSpeed: 0.5
+  startTime: 1.5
 --- !u!1 &1461451957
 GameObject:
   m_ObjectHideFlags: 0

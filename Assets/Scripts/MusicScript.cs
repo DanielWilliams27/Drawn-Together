@@ -6,10 +6,20 @@ public class MusicScript : MonoBehaviour
 {
     public List<AudioSource> musicPlaylist;
     private int _musicIndex = 0;
+    private static MusicScript _musicInstance;
 
     private void Awake()
     {
         DontDestroyOnLoad(this);
+
+        if (_musicInstance == null)
+        {
+            _musicInstance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     // Start is called before the first frame update
