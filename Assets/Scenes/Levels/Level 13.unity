@@ -1001,7 +1001,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1597547080658415189, guid: e44a724d6ca5eae4e8c1c4d8c527e24d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1597547080658415189, guid: e44a724d6ca5eae4e8c1c4d8c527e24d, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2013,7 +2013,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Congratulations
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1322483724
@@ -2071,11 +2071,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1597547080658415189, guid: e44a724d6ca5eae4e8c1c4d8c527e24d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 20
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 1597547080658415189, guid: e44a724d6ca5eae4e8c1c4d8c527e24d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1597547080658415189, guid: e44a724d6ca5eae4e8c1c4d8c527e24d, type: 3}
       propertyPath: m_LocalRotation.w
