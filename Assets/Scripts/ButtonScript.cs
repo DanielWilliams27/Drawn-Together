@@ -7,7 +7,6 @@ using UnityEngine.EventSystems;
 public class ButtonScript : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     public Text text;
-    
 
     public void OnEnable()
     {
