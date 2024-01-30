@@ -35,5 +35,11 @@ public class OpeningScript : MonoBehaviour
             ControllerScript.playState = true;
             this.gameObject.SetActive(false);
         }
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            ControllerScript.playState = true;
+            this.gameObject.SetActive(false);
+        }
     }
 }
