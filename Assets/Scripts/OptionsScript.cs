@@ -123,6 +123,8 @@ public class OptionsScript : MonoBehaviour
                     break;
             }
         }
+
+        up.RefreshShownValue();
     }
 
     public void ChangeDownKey()
@@ -240,6 +242,8 @@ public class OptionsScript : MonoBehaviour
                     break;
             }
         }
+
+        down.RefreshShownValue();
     }
 
     public void ChangeLeftKey()
@@ -357,6 +361,8 @@ public class OptionsScript : MonoBehaviour
                     break;
             }
         }
+
+        left.RefreshShownValue();
     }
 
     public void ChangeRightKey()
@@ -474,5 +480,7 @@ public class OptionsScript : MonoBehaviour
                     break;
             }
         }
+
+        right.RefreshShownValue();
     }
 }
